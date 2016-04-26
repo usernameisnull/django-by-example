@@ -1,3 +1,4 @@
+#encoding: utf-8
 """
 Django settings for mysite project.
 
@@ -101,3 +102,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+# /home/mabing/django/my_env/mysite/static
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')

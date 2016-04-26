@@ -5,7 +5,7 @@ from django.db import models
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
-
+from django.core.urlresolvers import reverse
 
 class PublishedManager(models.Manager):
     """
@@ -41,12 +41,9 @@ class Post(models.Model):
     def __str__(self):
         return self.title
     def get_absolute_url(self):
-    """
-    在模板里要用到的反向url
-    """
-        return reverse('blog:post_detail',  # blog应该是mysite/urls.py里的namespace, post_detail应该是blog/urls.py里的name
-                        args=[self.publish.year,    # 这里应该是往url里传的参数，列表里的元素的顺序应该是有讲究的，这里是不是                                                    #能用字典？
-                              self.publish.strftime('%m'),  # 这里的2个strftime的格式化字符串生成的都是两位数的，为了和url里#                                                            # 的正则相匹配
-                              self.publish.strftime('%d'),
-                              self.slug])
+        return reverse('blog:post_detail',# blog应该是mysite/urls.py里的namespace, post_detail应该是blog/urls.py里的name
+                    args=[self.publish.year,# 这里应该是往url里传的参数，列表里的元素的顺序应该是有讲究的，这里是不是                                                    #能用字典？
+                          self.publish.strftime('%m'),  # 这里的2个strftime的格式化字符串生成的都是两位数的，为了和url里#                                                            # 的正则相匹配
+                          self.publish.strftime('%d'),
+                          self.slug])
 

@@ -9,9 +9,10 @@ do
     head -n 1 "$item"| grep utf-8
     if [[ "$?" -ne 0 ]]; then
         # 添加
-        lines=$(wc -l "$item")
+        lines=$(cat ./mysite/__init__.py | wc -l)
         # 如果py文件为空
-        if [[ "$lines" -eq 0 ]]; then
+        echo "---------------$lines"
+        if [[ $lines -eq 0 ]]; then
             echo "#encoding: utf-8" >> "$item"
         else
             add_utf8 "$item"
