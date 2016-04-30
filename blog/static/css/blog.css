@@ -1,3 +1,31 @@
-body {
-    color:red;
+h1 {
+	border-bottom: 2px solid #ccc;
+	
+}
+* {
+	font-family: Arial;
+}
+a {
+	color: #39ABFB;
+	text-decoration:none;
+}
+
+.date {
+	color: #ccc;
+	font-size: 70%; 
+}
+
+#content {
+	box-sizing:border-box;
+	border: 0px solid transparent;
+	width:68%;
+	float:left;
+	padding:0 25px;
+	font-weight:bold;
+	}
+	
+#sidebar {
+	background-color: #EEE;
+	width:32%;
+	float:left;
 }
