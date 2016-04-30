@@ -1,4 +1,4 @@
-#encoding: utf-8
+# encoding: utf-8
 """
 Django settings for mysite project.
 
@@ -106,3 +106,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # /home/mabing/django/my_env/mysite/static
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+DEFAULT_CHARSET = 'utf-8'
+# 下面的这些自己配哦
+EMAIL_HOST = ''
+EMAIL_PORT = ''
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''

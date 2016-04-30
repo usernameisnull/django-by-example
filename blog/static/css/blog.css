@@ -9,12 +9,17 @@ a {
 	color: #39ABFB;
 	text-decoration:none;
 }
-
+input[type=submit] {
+	background-color: #39ABFB;
+}
 .date {
 	color: #ccc;
 	font-size: 70%; 
 }
-
+.errorlist{
+	color:red;
+	padding:0;
+}
 #content {
 	box-sizing:border-box;
 	border: 0px solid transparent;
@@ -28,4 +33,10 @@ a {
 	background-color: #EEE;
 	width:32%;
 	float:left;
+}
+
+[type=text],[type=email],textarea {
+	background-color: #EEE;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
