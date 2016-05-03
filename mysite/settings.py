@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'blog',
     'blog1',
     'blog2',
+    'taggit',
 )
 
 MIDDLEWARE_CLASSES = (

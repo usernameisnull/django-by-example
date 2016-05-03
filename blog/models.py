@@ -5,6 +5,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
+from taggit.managers import TaggableManager
 
 
 class PublishedManager(models.Manager):
@@ -18,6 +19,7 @@ class PublishedManager(models.Manager):
 
 
 class Post(models.Model):
+    tags = TaggableManager()
     # todo:下面用了自定义的manager，这里就必须显示的定义默认的manager，why？
     objects = models.Manager()
     # 上面自定义的manger
@@ -56,3 +58,19 @@ class Post(models.Model):
                              self.slug])
         # 测试reverse url，在mysite.urls里定义了对于的url
         #  return reverse('blog1:post_detail')
+
+Post.tags.values_list
+class Comment(models.Model):
+    post = models.ForeignKey(Post, related_name='comments')
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ('created',)
+
+    def __unicode__(self):
+        return u'Comment by {} on {}'.format(self.name, self.post)
