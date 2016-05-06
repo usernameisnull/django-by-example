@@ -59,7 +59,7 @@ class Post(models.Model):
         # 测试reverse url，在mysite.urls里定义了对于的url
         #  return reverse('blog1:post_detail')
 
-Post.tags.values_list
+
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments')
     name = models.CharField(max_length=80)

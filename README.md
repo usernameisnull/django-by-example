@@ -12,6 +12,7 @@ django by example 练习的代码
 5. 41页的cd.to 应该为from.to
 6. 50页的new_comment根本没穿进去啊。。
 7. models.py里的__str__改为__unicode__，因为我用的python2.7,不然在删除评论的时候会报ascii错误。
+8. mark_down自定义过滤器没起作用
 改进：
 1. post_list页面添加了最后一页，和总的项数
 6. 添加了发送邮件成功后的返回按钮，返回到post_detail页面
