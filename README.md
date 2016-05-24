@@ -12,7 +12,7 @@ django by example 练习的代码
 5. 41页的cd.to 应该为from.to
 6. 50页的new_comment根本没穿进去啊。。
 7. models.py里的__str__改为__unicode__，因为我用的python2.7,不然在删除评论的时候会报ascii错误。
-8. mark_down自定义过滤器没起作用
+8. mark_down自定义过滤器没起作用->不应该忽略那些空行
 改进：
 1. post_list页面添加了最后一页，和总的项数
 6. 添加了发送邮件成功后的返回按钮，返回到post_detail页面
@@ -39,4 +39,9 @@ django by example 练习的代码
         # 这样写是因为CommentForm只用了部分的Post的字段，存不进数据库的
         # 这样写也是官方文档的写法
         https://docs.djangoproject.com/en/dev/topics/forms/modelforms/
-    3. <ExtendsNode: extends "blog/base.html"> must be the first tag in the template
+        
+    3.  {% extends xx.html%}应该在模板的第一行
+        <ExtendsNode: extends "blog/base.html"> must be the first tag in the template
+    
+    4.  makemigrations只是在你的model有改变的时候才会起作用，当你把django.contrib.sites和django.contrib.sitemaps
+        放在installed_apps里面的时候，直接用migrations
